@@ -1,0 +1,16 @@
+# Travail à Rendre - Affichage du Contenu Saisi dans une différente activité
+
+## Objectif
+L’objectif de cet exercice est d’afficher le contenu saisi par un utilisateur dans une autre activité en cliquant sur le bouton **« Envoyer »**.
+
+### Améliorations
+Pour enrichir l'application, j'ai ajouté deux boutons supplémentaires :
+1. **Un bouton de réinitialisation** : Ce bouton permet de réinitialiser les **EditText** et les **CheckBox**.
+2. **Un bouton de retour** : Ce bouton permet de retourner à l'activité précédente.
+
+### Captures d'écran
+Voici quelques captures d'écran de l'application en action :
+
+| Écran initial | Remplissage des informations | Affichage dans une autre activité |
+| ------------- | --------------------------- | --------------------------------- |
+| ![Écran initial](screen_before_info.png) | ![Remplissage des informations](screen_after_info1.png) | ![Affichage dans une autre activité](screen_after_info2.png) |
