@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">app1</string>
+    <string name="nom">Nom et Prénom :</string>
+    <string name="email">Email :</string>
+    <string name="ville">Ville :</string>
+    <string name="send">Envoyer</string>
+    <string name="genre">Genre :</string>
+    <string name="male">M</string>
+    <string name="female">F</string>
+    <array name="villes">
+        <item>Marrakech</item>
+        <item>Casa</item>
+        <item>Rabat</item>
+    </array>
+
+</resources>
