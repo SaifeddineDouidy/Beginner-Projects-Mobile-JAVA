@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">tp1_exercice1</string>
+    <string name="Toast">Toast</string>
+    <string name="Increment">Increment</string>
+    <string name="Decrement">Decrement</string>
+    <string name="Reset">Reset</string>
 </resources>
