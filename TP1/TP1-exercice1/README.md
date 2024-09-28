@@ -27,6 +27,7 @@ Voici quelques captures d'écran de l'application en action :
 | -------------- | ---------------- |
 | ![Décrémentation](screen_after_decrementation.png) | ![Réinitialisation](screen_after_reset.png) |
 
-[Voir la vidéo](tp1-exo1.webm)                    
+[Voir la vidéo][tp1-exo1.webm](https://github.com/user-attachments/assets/f5913cf7-5661-4be2-abe7-bbc6e76f5dc1)
+                   
   
 
