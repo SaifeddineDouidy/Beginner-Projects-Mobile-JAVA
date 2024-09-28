@@ -19,15 +19,25 @@ Ainsi, l'application offre désormais la possibilité non seulement d'incrément
 
 Voici quelques captures d'écran de l'application en action :
 
-| Écran initial | Toast affiché | Incrémentation |
-| ------------- | ------------- | -------------- |
-| ![Écran initial](screen_before_action.png) | ![Toast](screen_after_toast.png) | ![Incrémentation](screen_after_incrementation.png) |
+| Écran initial | Toast affiché |
+| ------------- | ------------- |
+| <img src="screen_before_action.png" width="300" height="600"> | <img src="screen_after_toast.png" width="300" height="600"> |
 
-| Décrémentation | Réinitialisation |
-| -------------- | ---------------- |
-| ![Décrémentation](screen_after_decrementation.png) | ![Réinitialisation](screen_after_reset.png) |
+| Incrémentation | Décrémentation |
+| -------------- | -------------- |
+| <img src="screen_after_incrementation.png" width="300" height="600"> | <img src="screen_after_decrementation.png" width="300" height="600"> |
 
-[Voir la vidéo][tp1-exo1.webm](https://github.com/user-attachments/assets/f5913cf7-5661-4be2-abe7-bbc6e76f5dc1)
-                   
-  
+| Réinitialisation |                
+| ---------------- |                
+| <img src="screen_after_reset.png" width="300" height="600"> |
 
+<br>  
+<br>
+
+Ceci est une courte vidéo montrant l'application **HelloToast** en action : 
+
+<div align="center">
+
+[Voir la vidéo](https://github.com/user-attachments/assets/f5913cf7-5661-4be2-abe7-bbc6e76f5dc1)
+
+</div>
