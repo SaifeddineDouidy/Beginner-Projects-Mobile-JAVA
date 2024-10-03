@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E91E63"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".SplashActivity">
+
+    <ImageView
+        android:id="@+id/splashImage"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/pizza" />
+
+    <TextView
+        android:id="@+id/titleSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pizza Recipes"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:textColor="#FFF"
+        android:layout_marginTop="80dp"/>
+
+    <TextView
+        android:id="@+id/textSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make your pizza"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#FFF" />
+</LinearLayout>
