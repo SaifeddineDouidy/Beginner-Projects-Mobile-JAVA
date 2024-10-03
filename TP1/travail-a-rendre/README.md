@@ -13,4 +13,16 @@ Voici quelques captures d'écran de l'application en action :
 
 | Écran initial | Remplissage des informations | Affichage dans une autre activité |
 | ------------- | --------------------------- | --------------------------------- |
-| ![Écran initial](screen_before_info.png) | ![Remplissage des informations](screen_after_info1.png) | ![Affichage dans une autre activité](screen_after_info2.png) |
+| <img src="screen_before_info.png" width="300" height="600"> | <img src="screen_after_info1.png" width="300" height="600"> | <img src="screen_after_info2.png" width="300" height="600"> |
+
+<br>
+<br>
+
+Ceci est une courte vidéo montrant l'application **Affichage du Contenu Saisi** en action :
+
+<div align="center">
+
+[Voir la vidéo](https://github.com/user-attachments/assets/b03104f6-b7df-4304-9b47-f46b50f47e73)                    
+  
+
+</div>

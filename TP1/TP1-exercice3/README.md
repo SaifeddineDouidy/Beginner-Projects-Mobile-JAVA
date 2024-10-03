@@ -13,4 +13,20 @@ Voici quelques captures d'écran de l'application en action :
 
 | Écran initial | Affichage des choix |
 | ------------- | ------------------- |
-| ![Écran initial](screen_before_quests.png) | ![Affichage des choix](screen_after_quests.png) |
+| <img src="screen_before_quests.png" width="300" height="600"> | <img src="screen_after_quests.png" width="300" height="600"> |
+
+<br>
+<br>
+
+Ceci est une courte vidéo montrant l'application **Affichage du Contenu Sélectionné** en action :
+
+<div align="center">
+
+[Voir la vidéo](https://github.com/user-attachments/assets/2333dc1d-f972-45a2-a1a4-5b6b34a836e5)                                        
+  
+  
+                    
+                      
+  
+
+</div>
