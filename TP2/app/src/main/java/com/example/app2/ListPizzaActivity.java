@@ -124,22 +124,6 @@ public class ListPizzaActivity extends AppCompatActivity {
             }
         });
 
-        shareButton = findViewById(R.id.shareButton);
-        shareButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("THE IMAGE  WAS  CLICKED");
-                Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
-                whatsappIntent.setType("text/plain");
-                whatsappIntent.putExtra(Intent.EXTRA_TEXT, "Testing");
-                try {
-                    whatsappIntent.setPackage("com.whatsapp");
-                    startActivity(whatsappIntent);
-                } catch (android.content.ActivityNotFoundException ex) {
-                    System.out.println("Whatsapp isnt installed");
-                }
-            }
-        });
 
     }
 }

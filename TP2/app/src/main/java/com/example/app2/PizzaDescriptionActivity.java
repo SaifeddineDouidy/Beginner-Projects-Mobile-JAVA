@@ -1,5 +1,6 @@
 package com.example.app2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,7 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 
 public class PizzaDescriptionActivity extends AppCompatActivity {
     private TextView pizzaName, pizzaDescription, pizzaIngredient, pizzaPreparation;
-    private ImageView pizzaImage;
+    private ImageView pizzaImage, shareButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,5 +54,23 @@ public class PizzaDescriptionActivity extends AppCompatActivity {
         pizzaIngredient.setText(ingredients);
         pizzaPreparation.setText(preparation);
         pizzaImage.setImageResource(imageResource);
+
+        shareButton = findViewById(R.id.shareButton);
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("THE IMAGE  WAS  CLICKED");
+                Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
+                whatsappIntent.setType("text/plain");
+                whatsappIntent.putExtra(Intent.EXTRA_TEXT, name+" "+description+" "+ingredients +" "+preparation);
+                try {
+                    whatsappIntent.setPackage("com.whatsapp");
+                    startActivity(whatsappIntent);
+                } catch (android.content.ActivityNotFoundException ex) {
+                    System.out.println("Whatsapp isnt installed");
+                }
+            }
+        });
+
     }
 }
