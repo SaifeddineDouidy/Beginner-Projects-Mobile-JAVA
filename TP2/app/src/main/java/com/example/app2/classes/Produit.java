@@ -5,7 +5,7 @@ public class Produit {
     private String nom;
     private int nbrIngredients;
     private int image;
-    private float duree;
+    private String duree;
     private String detailsIngredients;
     private String description;
     private String preparation;
@@ -15,7 +15,7 @@ public class Produit {
         this.id = ++compteur;
     }
 
-    public Produit(String nom, int nbrIngredients, int image,float duree, String detailsIngredients, String description, String preparation) {
+    public Produit(String nom, int nbrIngredients, int image,String duree, String detailsIngredients, String description, String preparation) {
         this.id = ++compteur;
         this.nom = nom;
         this.nbrIngredients = nbrIngredients;
@@ -58,11 +58,11 @@ public class Produit {
         this.detailsIngredients = detailsIngredients;
     }
 
-    public float getDuree() {
+    public String getDuree() {
         return duree;
     }
 
-    public void setDuree(float duree) {
+    public void setDuree(String duree) {
         this.duree = duree;
     }
 

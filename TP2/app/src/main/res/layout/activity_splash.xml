@@ -1,37 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E91E63"
-    android:gravity="center"
-    android:orientation="vertical"
     tools:context=".SplashActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0" />
 
     <ImageView
         android:id="@+id/splashImage"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@drawable/pizza" />
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:elevation="4dp"
+        android:src="@drawable/pizza"
+        app:layout_constraintBottom_toTopOf="@+id/titleSplash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/horizontalGuideline"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/titleSplash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:elevation="4dp"
+        android:fontFamily="sans-serif-medium"
         android:text="Pizza Recipes"
-        android:textSize="34sp"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
         android:textStyle="bold"
-        android:textColor="#FFF"
-        android:layout_marginTop="80dp"/>
+        app:layout_constraintBottom_toTopOf="@+id/textSplash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splashImage"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/textSplash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Make your pizza"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#FFF" />
-</LinearLayout>
+        android:layout_marginTop="8dp"
+        android:elevation="4dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Make your perfect pizza"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleSplash"
+        app:layout_constraintVertical_bias="0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -56,7 +56,7 @@ public class PizzaAdapter extends BaseAdapter {
         pizzaImage.setImageResource(produits.get(position).getImage());
         pizzaName.setText(produits.get(position).getNom());
         pizzaNbrIngredients.setText(String.valueOf(produits.get(position).getNbrIngredients()) + " ingredients");
-        pizzaDuree.setText(produits.get(position).getDuree() + " min");
+        pizzaDuree.setText(produits.get(position).getDuree());
 
         return convertView;
     }
