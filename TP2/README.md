@@ -34,6 +34,6 @@ Ceci est une courte vidéo montrant l'application **Recettes de Pizza** en actio
 
 <div align="center">
 
-[Voir la vidéo](https://github.com/user-attachments/assets/6a3687d2-0688-440c-bbeb-7c2211dbbdd5)
+[Voir la vidéo](https://github.com/user-attachments/assets/e2c6a0e7-c3d0-4c76-8010-071b4b57cc03)
 
 </div>
