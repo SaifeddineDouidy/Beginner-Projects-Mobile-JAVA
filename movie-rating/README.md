@@ -21,11 +21,12 @@ Voici quelques captures d'écran de l'application en action :
 
 | Écran de démarrage | Liste des Films |
 | ------------------- | --------------- |
-| ![Ecran de démarrage](splash_activity.png) | ![Liste des Films](ListActivity_screen.png) |
+| <img src="splash_activity.png" width="300"> | <img src="ListActivity_screen.png" width="300"> |
 
 | Popup pour chaque Film | Partage du Film |
 | ---------------- | ---------------- |
-| ![Popup pour chaque Film](modif_note_movie.png) | ![Partage du Film](partage_film.png) |
+| <img src="modif_note_movie.png" width="300"> | <img src="partage_film.png" width="300"> |
+
 
 <br>  
 <br>
