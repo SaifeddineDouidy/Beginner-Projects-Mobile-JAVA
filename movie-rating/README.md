@@ -21,7 +21,7 @@ Voici quelques captures d'écran de l'application en action :
 
 | Écran de démarrage | Liste des Films |
 | ------------------- | --------------- |
-| ![Ecran de démarrage](splash_screen.png) | ![Liste des Films](ListMovies_activity.png) |
+| ![Ecran de démarrage](splash_activity.png) | ![Liste des Films](ListMovies_activity.png) |
 
 | Détails du Film | Partage du Film |
 | ---------------- | ---------------- |
@@ -34,6 +34,6 @@ Ceci est une courte vidéo montrant l'application **Notation de Films** en actio
 
 <div align="center">
 
-[Voir la vidéo]()
+[Voir la vidéo](https://github.com/user-attachments/assets/0e28c35f-aa13-428a-b3a1-d47f29c1ca7b)
 
 </div>
