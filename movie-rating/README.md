@@ -25,7 +25,7 @@ Voici quelques captures d'écran de l'application en action :
 
 | Popup pour chaque Film | Partage du Film |
 | ---------------- | ---------------- |
-| <img src="modif_note_movie.png" width="300"> | <img src="partage_film.png" width="300"> |
+| <img src="modif_note_movie.png" width="300"> | <img src="partager_film.png" width="300"> |
 
 
 <br>  
