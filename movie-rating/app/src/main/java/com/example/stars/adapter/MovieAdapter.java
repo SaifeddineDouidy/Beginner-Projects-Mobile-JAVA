@@ -45,6 +45,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         this.mfilter = new NewFilter(this);
     }
 
+    public void addMovie(Movie movie) {
+        movies.add(movie);
+        moviesFilter.add(movie);
+        notifyItemInserted(moviesFilter.size() - 1);
+    }
+
+
     @NonNull
     @Override
     public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {

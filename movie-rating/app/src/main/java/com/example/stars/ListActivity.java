@@ -3,6 +3,9 @@ package com.example.stars;
 
 import static android.content.ContentValues.TAG;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,9 +15,11 @@ import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
+import android.view.View;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.SearchView;
 
 import com.example.stars.adapter.MovieAdapter;
@@ -30,6 +35,7 @@ public class ListActivity extends AppCompatActivity {
     private MovieAdapter movieAdapter;
     private MovieService service;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +49,6 @@ public class ListActivity extends AppCompatActivity {
 
         // Initialiser le service et la liste
         service = MovieService.getInstance();
-        movies = new ArrayList<>();
 
         init();
 
@@ -78,9 +83,42 @@ public class ListActivity extends AppCompatActivity {
         });
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.app_bar_share){
+        if (item.getItemId() == R.id.app_bar_add) {
+            // Inflate the custom layout for adding a movie
+            View popup = LayoutInflater.from(this).inflate(R.layout.movie_add_item, null, false);
+
+            // Get references to the EditText fields in the custom layout
+            EditText movieName = popup.findViewById(R.id.movieNameValue);
+            EditText movieURL = popup.findViewById(R.id.movieURLValue);
+
+            AlertDialog dialog = new AlertDialog.Builder(this)
+                    .setTitle("Ajouter un Film")
+                    .setView(popup)
+                    .setPositiveButton("Valider", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String movieNameValue = movieName.getText().toString();
+                            String movieURLValue = movieURL.getText().toString();
+
+                            if (!movieNameValue.isEmpty() && !movieURLValue.isEmpty()) {
+                                Movie newMovie = new Movie(movieNameValue, movieURLValue, 4f);
+                                movieAdapter.addMovie(newMovie);
+
+                                Log.d("Movie Name:", movieNameValue);
+                                Log.d("Movie URL:", movieURLValue);
+                            }
+
+                        }
+                    })
+                    .setNegativeButton("Annuler", null)
+                    .create();
+            dialog.show();
+        }
+
+        if (item.getItemId() == R.id.app_bar_share) {
             String txt = "Stars";
             String mimeType = "text/plain";
             ShareCompat.IntentBuilder
@@ -90,8 +128,10 @@ public class ListActivity extends AppCompatActivity {
                     .setText(txt)
                     .startChooser();
         }
+
         return super.onOptionsItemSelected(item);
     }
+
 
     public void init() {
         service.create(new Movie("Interstellar",
