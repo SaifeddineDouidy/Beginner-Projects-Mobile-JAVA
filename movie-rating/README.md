@@ -23,15 +23,15 @@ Voici quelques captures d'écran de l'application en action :
 
 | Écran de démarrage | Liste des Films |
 | ------------------- | --------------- |
-| <img src="splash_activity.png" width="250"> | <img src="ListActivity_screen.png" width="250"> |
+| <img src="Screens/splash_activity.png" width="250"> | <img src="Screens/ListActivity_screen.png" width="250"> |
 
 | Popup pour chaque Film | Partage du Film |
 | ---------------------- | ---------------- |
-| <img src="modif_note_movie.png" width="250"> | <img src="partager_film.png" width="250"> |
+| <img src="Screens/modif_note_movie.png" width="250"> | <img src="Screens/partager_film.png" width="250"> |
 
 | [Formulaire d'ajout de film] | [Résultat d'ajout] |
 | ----------------------------------- | --------------------------------- |
-| <img src="ajouter_2.png" width="250"> | <img src="ajouter_3.png" width="250"> |
+| <img src="Screens/ajouter_2.png" width="250"> | <img src="Screens/ajouter_3.png" width="250"> |
 
 <br>  
 <br>
