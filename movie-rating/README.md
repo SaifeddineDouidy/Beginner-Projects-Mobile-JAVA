@@ -3,8 +3,9 @@
 ## Objectif
 L’objectif de cet exercice est de créer une application Android nommée **Notation de Films**. Cette application permet aux utilisateurs de consulter divers films avec des notes, des descriptions détaillées et des affiches.
 
+### Fonctionnalités Principales
 - **RecyclerView des Films** : Affiche une liste de films avec une image, le nom du film, et la note attribuée.
-- **Détails du Film** : Lorsqu'un utilisateur clique sur un film, un popup s'affiche on lui donnant la possibilité de modifier la note du film, annuler l'action ou bien partager les informations sur le titre.
+- **Détails du Film** : Lorsqu'un utilisateur clique sur un film, un popup s'affiche, lui donnant la possibilité de modifier la note du film, annuler l'action, ou bien partager les informations sur le titre.
 
 ## Améliorations
 
@@ -16,19 +17,21 @@ Pour enrichir l'application, j'ai ajouté trois fonctionnalités supplémentaire
 
 Ainsi, l'application offre une navigation fluide entre les films tout en permettant aux utilisateurs de partager facilement leurs films favoris.
 
-
 ## Captures d'écran
 
 Voici quelques captures d'écran de l'application en action :
 
 | Écran de démarrage | Liste des Films |
 | ------------------- | --------------- |
-| <img src="splash_activity.png" width="300"> | <img src="ListActivity_screen.png" width="300"> |
+| <img src="splash_activity.png" width="250"> | <img src="ListActivity_screen.png" width="250"> |
 
 | Popup pour chaque Film | Partage du Film |
-| ---------------- | ---------------- |
-| <img src="modif_note_movie.png" width="300"> | <img src="partager_film.png" width="300"> |
+| ---------------------- | ---------------- |
+| <img src="modif_note_movie.png" width="250"> | <img src="partager_film.png" width="250"> |
 
+| [Formulaire d'ajout de film] | [Résultat d'ajout] |
+| ----------------------------------- | --------------------------------- |
+| <img src="" width="250"> | <img src="" width="250"> |
 
 <br>  
 <br>
