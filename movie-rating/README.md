@@ -35,6 +35,6 @@ Ceci est une courte vidéo montrant l'application **Notation de Films** en actio
 
 <div align="center">
 
-[Voir la vidéo](https://github.com/user-attachments/assets/0e28c35f-aa13-428a-b3a1-d47f29c1ca7b)
+[Voir la vidéo](https://github.com/user-attachments/assets/9e704290-4b78-403b-a7b4-00982605c0d8)
 
 </div>
