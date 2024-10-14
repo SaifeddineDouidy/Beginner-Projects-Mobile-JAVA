@@ -31,7 +31,7 @@ Voici quelques captures d'écran de l'application en action :
 
 | [Formulaire d'ajout de film] | [Résultat d'ajout] |
 | ----------------------------------- | --------------------------------- |
-| <img src="ajouter_2" width="250"> | <img src="ajouter_3" width="250"> |
+| <img src="ajouter_2.png" width="250"> | <img src="ajouter_3.png" width="250"> |
 
 <br>  
 <br>
