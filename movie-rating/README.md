@@ -8,12 +8,14 @@ L’objectif de cet exercice est de créer une application Android nommée **Not
 
 ## Améliorations
 
-Pour enrichir l'application, j'ai ajouté deux fonctionnalités supplémentaires :
+Pour enrichir l'application, j'ai ajouté trois fonctionnalités supplémentaires :
 
 1. **Modification de la Note** : Les utilisateurs peuvent modifier la note d'un film après l'avoir visionné.
-2. **Partage** : Les utilisateurs peuvent partager leurs films préférés directement sur WhatsApp, email, sms, etc.
+2. **Partage** : Les utilisateurs peuvent partager leurs films préférés directement sur WhatsApp, email, SMS, etc.
+3. **Ajout de Films** : J'ai également ajouté une option "Ajouter" dans le menu, permettant aux utilisateurs d'ajouter de nouveaux films à la liste via un petit formulaire. Ce formulaire permet d'entrer le nom du film ainsi que l'URL de son affiche. Une fois ajouté, le film s'affiche immédiatement dans la liste des films.
 
 Ainsi, l'application offre une navigation fluide entre les films tout en permettant aux utilisateurs de partager facilement leurs films favoris.
+
 
 ## Captures d'écran
 
