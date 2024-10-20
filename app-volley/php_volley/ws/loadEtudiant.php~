@@ -1,0 +1,66 @@
+<?php
+
+use service\EtudiantService;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include_once '../racine.php';
+    include_once RACINE . '/service/EtudiantService.php';
+    loadAll();
+}
+
+function loadAll() {
+    $es = new EtudiantService();
+    header('Content-type: application/json');
+    @Override
+public void onBindViewHolder(@NonNull EtudiantViewHolder holder, int position) {
+        Log.d(TAG, "onBindViewHolder called for position: " + position);
+
+        Etudiant etudiant = etudiantsFiltered.get(position);
+    holder.name.setText(etudiant.getNom() + " " + etudiant.getPrenom());
+    holder.ville.setText(etudiant.getVille());
+
+    // Load the image if available, or set a placeholder if null
+    if (etudiant.getImg() != null && !etudiant.getImg().isEmpty()) {
+        // Build the data URI for the Base64 image
+        String base64Image = etudiant.getImg();
+        String imageDataUrl = "data:image/jpeg;base64," + base64Image;
+
+        Log.d("EtudiantAdapter", "Loading image data: " + imageDataUrl);
+
+        // Use Glide to load the Base64 encoded image directly
+        Glide.with(holder.itemView.getContext())
+        .load(imageDataUrl)
+        .placeholder(R.drawable.ic_launcher_background) // Placeholder while loading
+        .error(R.drawable.ic_launcher_background) // Fallback if loading fails
+        .into(holder.img);
+    } else {
+        holder.img.setImageResource(R.drawable.ic_launcher_background); // Default image if no Base64 string
+    }
+
+    holder.itemView.setOnClickListener(v -> {
+    // Handle item click here
+    });
+    Log.d(TAG, "Binding etudiant: " + etudiant.getNom() + ", " + etudiant.getVille());
+}
+
+    // Fetch all data
+    $data = $es->findAllApi();
+
+    // Check if data is empty
+    if (empty($data)) {
+        echo json_encode(['error' => 'No data found']);
+        return;
+    }
+
+    // Attempt to encode the data as JSON
+    $json = json_encode($data);
+
+    // Check for JSON encoding errors
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        echo json_encode(['error' => 'JSON encoding error: ' . json_last_error_msg()]);
+        return;
+    }
+
+    echo $json; // Output the JSON-encoded data
+}
+

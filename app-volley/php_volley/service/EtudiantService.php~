@@ -1,0 +1,219 @@
+<?php
+namespace service;
+
+use connexion\Connexion;
+use IDao;
+use PDO;
+
+include_once RACINE.'/classes/Etudiant.php';
+include_once RACINE.'/connexion/Connexion.php';
+include_once RACINE.'/dao/IDao.php';
+
+class EtudiantService implements IDao {
+
+    private $connexion;
+
+    function __construct() {
+        $this->connexion = new Connexion();
+    }
+
+    // Create a new Etudiant
+    public function create($etudiant) {
+        $query = "INSERT INTO etudiant (`nom`, `prenom`, `ville`, `sexe`, `image`) "
+            . "VALUES (:nom, :prenom, :ville, :sexe, :image)";
+        $stmt = $this->connexion->getConnexion()->prepare($query);
+
+        // Bind parameters
+        $stmt->bindParam(':nom', $etudiant->getNom());
+        $stmt->bindParam(':prenom', $etudiant->getPrenom());
+        $stmt->bindParam(':ville', $etudiant->getVille());
+        $stmt->bindParam(':sexe', $etudiant->getSexe());
+
+        // Handle the image as binary
+        $imageData = $etudiant->getImage(); // Get the raw binary image data
+        if ($imageData !== null) {
+            $stmt->bindParam(':image', $imageData, PDO::PARAM_LOB);
+        } else {
+            // Handle the case where no image is provided
+            $stmt->bindParam(':image', null, PDO::PARAM_LOB);
+        }
+
+        // Execute the query and handle errors
+        if (!$stmt->execute()) {
+            die('Error executing SQL query: ' . implode(", ", $stmt->errorInfo()));
+        }
+    }
+
+    public function findAll() {
+        $etds = array();
+        $query = "SELECT * FROM etudiant";
+        $req = $this->connexion->getConnexion()->prepare($query);
+        $req->execute();
+
+        // Check how many records are fetched
+        if ($req->rowCount() === 0) {
+            error_log("No records found in 'etudiant' table.");
+            return [];
+        }
+
+        while ($e = $req->fetch(PDO::FETCH_OBJ)) {
+            // Encode image as Base64 if present
+            $imageBase64 = $e->image !== null ? base64_encode($e->image) : null;
+            $etds[] = new Etudiant($e->id, $e->nom, $e->prenom, $e->ville, $e->sexe, $imageBase64);
+        }
+
+        return $etds;
+    }
+
+
+    // Find Etudiant by ID
+    public function findById($id) {
+        $query = "SELECT * FROM etudiant WHERE id = :id";
+        $req = $this->connexion->getConnexion()->prepare($query);
+        $req->bindParam(':id', $id, PDO::PARAM_INT);
+        $req->execute();
+
+        if ($e = $req->fetch(PDO::FETCH_OBJ)) {
+            // Encode image as Base64 if present
+            $imageBase64 = $e->image !== null ? base64_encode($e->image) : null;
+            return new Etudiant($e->id, $e->nom, $e->prenom, $e->ville, $e->sexe, $imageBase64);
+        }
+
+        return null; // Return null if no record is found
+    }
+
+    // Update an existing Etudiant
+    function update($o) {
+        // Check if 'id' is set
+        if (!isset($_POST['id'])) {
+            header('Content-type: application/json');
+            echo json_encode([
+                "message" => "ID parameter is missing.",
+                "status" => "error"
+            ]);
+            return;
+        }
+
+        // Extract the ID
+        $id = $_POST['id'];
+
+        // Prepare an array for SQL SET clauses and parameter bindings
+        $setClauses = [];
+        $params = [':id' => $id]; // Always include the ID in the parameters
+
+        // Check and add parameters if they are set
+        if (isset($_POST['nom'])) {
+            $setClauses[] = "nom = :nom";
+            $params[':nom'] = $_POST['nom'];
+        }
+
+        if (isset($_POST['prenom'])) {
+            $setClauses[] = "prenom = :prenom";
+            $params[':prenom'] = $_POST['prenom'];
+        }
+
+        if (isset($_POST['ville'])) {
+            $setClauses[] = "ville = :ville";
+            $params[':ville'] = $_POST['ville'];
+        }
+
+        if (isset($_POST['sexe'])) {
+            $setClauses[] = "sexe = :sexe";
+            $params[':sexe'] = $_POST['sexe'];
+        }
+
+        if (isset($_POST['imageBase64'])) {
+            $decodedImage = base64_decode($_POST['imageBase64']);
+            if ($decodedImage !== false) {
+                $setClauses[] = "image = :image";
+                $params[':image'] = $decodedImage;
+            } else {
+                header('Content-type: application/json');
+                echo json_encode(['status' => 'error', 'message' => 'Failed to decode image']);
+                return;
+            }
+        }
+
+        // If no fields to update, return an error message
+        if (empty($setClauses)) {
+            header('Content-type: application/json');
+            echo json_encode([
+                "message" => "No parameters to update.",
+                "status" => "error"
+            ]);
+            return;
+        }
+
+        // Build the SET part of the SQL query
+        $setPart = implode(", ", $setClauses);
+        $query = "UPDATE etudiant SET $setPart WHERE id = :id";
+
+        // Prepare and execute the statement
+        $es = new EtudiantService();
+        $req = $es->getConnection()->prepare($query);
+
+        foreach ($params as $key => $value) {
+            $req->bindValue($key, $value);
+        }
+
+        // Execute the update query
+        if (!$req->execute()) {
+            die('Error executing SQL query: ' . implode(", ", $req->errorInfo()));
+        }
+
+        // Return a confirmation response
+        header('Content-type: application/json');
+        echo json_encode([
+            "message" => "Student with ID $id has been updated.",
+            "status" => "success"
+        ]);
+    }
+
+
+    public function findAllApi() {
+        $query = "SELECT * FROM etudiant";
+        $req = $this->connexion->getConnexion()->prepare($query);
+        $req->execute();
+
+        // Fetch all data
+        $data = $req->fetchAll(PDO::FETCH_ASSOC);
+
+        // Check if data is fetched
+        if (!$data) {
+            error_log("No data found");
+            return [];
+        }
+
+        // Convert images from BLOB to Base64
+        foreach ($data as &$etudiant) {
+            if (isset($etudiant['image']) && !empty($etudiant['image'])) {
+                $etudiant['image'] = base64_encode($etudiant['image']); // Convert BLOB to Base64
+            } else {
+                $etudiant['image'] = null; // Set to null if no image exists
+            }
+        }
+
+        return $data; // Return the processed data
+    }
+
+
+
+
+    // Delete an Etudiant by ID
+    public function delete($etudiant) {
+        $query = "DELETE FROM etudiant WHERE id = :id";
+        $req = $this->connexion->getConnexion()->prepare($query);
+
+        // Store the ID in a variable
+        $id = $etudiant->getId();
+
+        // Bind the variable to the parameter
+        $req->bindParam(':id', $id, PDO::PARAM_INT);
+
+        // Execute the delete query
+        if (!$req->execute()) {
+            die('Error executing SQL query: ' . implode(", ", $req->errorInfo()));
+        }
+    }
+
+}
