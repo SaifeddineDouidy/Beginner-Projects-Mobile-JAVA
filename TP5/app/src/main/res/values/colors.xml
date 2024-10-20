@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="button_default_color">#6200EE</color>      <!-- Default Button Color -->
+    <color name="button_pressed_color">#3700B3</color>      <!-- Pressed Button Color -->
+    <color name="button_focused_color">#6200EE</color>
+    <color name="input_default_color">#FFFFFF</color>        <!-- Default Input Background Color -->
+    <color name="input_focused_color">#E0E0E0</color>
+</resources>

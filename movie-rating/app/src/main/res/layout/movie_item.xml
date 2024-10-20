@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <!-- Circle ImageView for the image -->
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img"
         android:layout_width="100dp"
@@ -15,7 +14,6 @@
         android:layout_alignParentTop="true"
         />
 
-    <!-- TextView for the name -->
     <TextView
         android:id="@+id/name"
         android:layout_width="179dp"
