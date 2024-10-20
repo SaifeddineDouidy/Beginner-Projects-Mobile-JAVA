@@ -23,3 +23,8 @@ Voici quelques captures d'écran de l'application en action :
 |:----------------:|:-------------------:|:-----------------------:|:----------------------:|:--------------------:|
 | <img src="screenshots/AddEtudiant.png" width="150"> | <img src="screenshots/ListEtudiantActivité.png" width="150"> | <img src="screenshots/Modification_etudiant.png" width="150"> | <img src="screenshots/Suppression_etudiant.png" width="150"> | <img src="screenshots/Recherche_etudiant.png" width="150"> |
 
+## Vidéo démo
+Voici la vidéo démo de l'appliation en action :
+
+[Vidéo démo](https://github.com/user-attachments/assets/1fd81c30-f4eb-4ed6-91e6-3e494d87eafb)
+
