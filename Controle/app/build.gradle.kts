@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.controle"
+    namespace = "ma.ensaj.project"
     compileSdk = 34
 
     defaultConfig {

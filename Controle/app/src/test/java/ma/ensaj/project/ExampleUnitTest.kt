@@ -1,4 +1,4 @@
-package com.example.controle
+package ma.ensaj.project
 
 import org.junit.Test
 

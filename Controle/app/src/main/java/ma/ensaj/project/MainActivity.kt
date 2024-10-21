@@ -1,9 +1,9 @@
-package com.example.controle
+package ma.ensaj.project
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
-import com.example.controle.adapter.ViewPagerAdapter
+import ma.ensaj.project.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
         // Attach TabLayout and ViewPager2
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = when (position) {
-                0 -> "Tab 1"
-                1 -> "Tab 2"
+                0 -> "Login"
+                1 -> "Register"
                 else -> "Tab"
             }
-        }.attach()
+        }.attach();
     }
 }

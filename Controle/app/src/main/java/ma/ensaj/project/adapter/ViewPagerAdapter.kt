@@ -1,11 +1,11 @@
-package com.example.controle.adapter
+package ma.ensaj.project.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.controle.fragments.FirstFragment
-import com.example.controle.fragments.SecondFragment
+import ma.ensaj.project.fragments.FirstFragment
+import ma.ensaj.project.fragments.SecondFragment
 
 class ViewPagerAdapter(
     fragmentManager: FragmentManager,
