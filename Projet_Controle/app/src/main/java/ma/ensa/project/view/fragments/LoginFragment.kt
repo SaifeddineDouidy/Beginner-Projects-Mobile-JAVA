@@ -15,11 +15,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.launch
 import ma.ensa.project.R
+import ma.ensa.project.SecondActivity
 import ma.ensa.project.database.UserDatabase
 import ma.ensa.project.repository.UserRepository
 import ma.ensa.project.utils.UserViewModelFactory
 import ma.ensa.project.view.viewmodel.UserViewModel
-import ma.ensa.project.SecondActivity
 
 class LoginFragment : Fragment() {
     private lateinit var userViewModel: UserViewModel

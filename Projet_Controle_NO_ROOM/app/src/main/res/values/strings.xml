@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Projet Controle</string>
+    <string name="app_name">TP15_V1</string>
     <string name="swipe_left_for_register">Swipe Left for Register</string>
     <string name="login">Login</string>
     <string name="password">Password</string>

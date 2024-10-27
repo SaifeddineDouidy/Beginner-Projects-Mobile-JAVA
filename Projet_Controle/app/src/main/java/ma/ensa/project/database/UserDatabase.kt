@@ -4,9 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import ma.ensa.project.utils.DateConverter
 
 @Database(entities = [UserEntity::class], version = 1, exportSchema = false
 )
+@TypeConverters(DateConverter::class)  // Ajoutez cette ligne
+
 abstract class UserDatabase : RoomDatabase() {
     abstract fun userDao(): UserDAO
 

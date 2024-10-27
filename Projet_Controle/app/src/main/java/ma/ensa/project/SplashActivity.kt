@@ -1,4 +1,5 @@
-package ma.ensa.projet
+// SplashActivity.kt
+package ma.ensa.project
 
 import android.annotation.SuppressLint
 import android.content.Intent
