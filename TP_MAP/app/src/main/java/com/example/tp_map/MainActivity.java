@@ -39,11 +39,9 @@ public class MainActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
     private static final String INSERT_URL = "http://192.168.216.79/tp_map_backend/createPosition.php";
 
-    // Request codes for permission handling
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private static final int PHONE_PERMISSION_REQUEST_CODE = 2;
 
-    // Required permissions
     private static final String[] REQUIRED_PERMISSIONS = {
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -58,9 +56,7 @@ public class MainActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         checkAndRequestPermissions();
 
-        // Set up the button click listener
         findViewById(R.id.button_show_map).setOnClickListener(v -> {
-            // Start MapsActivity with current location
             if (latitude != 0 && longitude != 0) {
                 Intent intent = new Intent(MainActivity.this, MapsActivity.class);
                 intent.putExtra("latitude", latitude);
@@ -76,8 +72,7 @@ public class MainActivity extends AppCompatActivity {
         if (!hasRequiredPermissions()) {
             ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, PHONE_PERMISSION_REQUEST_CODE);
         } else {
-            // Permissions are already granted, start location updates
-            getDeviceIdentifier(); // Call this method to get IMEI when permissions are granted
+            getDeviceIdentifier();
             startLocationUpdates();
         }
     }
@@ -99,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // Get last known location (if available)
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ||
                 ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
@@ -111,8 +105,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             locationManager.requestLocationUpdates(
                     LocationManager.GPS_PROVIDER,
-                    60000, // 60 seconds interval
-                    150,   // 150 meters minimum distance
+                    60000,
+                    150,
                     new LocationListener() {
                         @Override
                         public void onLocationChanged(@NonNull Location location) {
@@ -149,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
         @SuppressLint("StringFormatMatches") String msg = getString(R.string.new_location, latitude, longitude, altitude, accuracy);
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
 
-        // Send location data to server
         sendLocationToServer(latitude, longitude);
     }
 
@@ -173,13 +166,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 HashMap<String, String> params = new HashMap<>();
-                String imei = getDeviceIdentifier(); // Utilisez la méthode mise à jour pour obtenir l'IMEI
+                String imei = getDeviceIdentifier();
 
-                // Populate the parameters
                 params.put("latitude", String.valueOf(lat));
                 params.put("longitude", String.valueOf(lon));
                 params.put("date", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(new Date()));
-                params.put("imei", imei); // Add IMEI to parameters
+                params.put("imei", imei);
 
                 return params;
             }
@@ -195,14 +187,14 @@ public class MainActivity extends AppCompatActivity {
         try {
             if (telephonyManager != null && ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    imei = telephonyManager.getImei(); // For Android 12 and above
+                    imei = telephonyManager.getImei();
                 } else {
-                    imei = telephonyManager.getDeviceId(); // For older Android versions
+                    imei = telephonyManager.getDeviceId();
                 }
             }
         } catch (SecurityException e) {
             Log.e("IMEIError", "Permission not granted for reading IMEI", e);
-            imei = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID); // Fallback to Android ID
+            imei = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
         }
 
         return imei;
@@ -212,8 +204,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PHONE_PERMISSION_REQUEST_CODE) {
             if (grantResults.length > 0 && allPermissionsGranted(grantResults)) {
-                // Permissions granted
-                getDeviceIdentifier(); // Now we can get the IMEI
+                getDeviceIdentifier();
                 startLocationUpdates();
             } else {
                 Toast.makeText(this, "Required permissions were denied", Toast.LENGTH_SHORT).show();
