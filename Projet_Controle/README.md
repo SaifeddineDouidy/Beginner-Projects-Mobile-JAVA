@@ -1,15 +1,4 @@
-#                    
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-   Android Authentication App
+# Android Authentication App
 
 Une application Android permettant aux utilisateurs de se connecter ou de créer un compte via une interface moderne utilisant ViewPager2 et TabLayout, construite selon l'architecture MVVM.
 
@@ -58,8 +47,8 @@ Une application Android permettant aux utilisateurs de se connecter ou de créer
     <td>Page d'Inscription</td>
   </tr>
   <tr>
-    <td><img src="assets/login_screen.png" width="200"/></td>
-    <td><img src="assets/register_screen.png" width="200"/></td>
+    <td><img src="photos/login_screen.png" width="200"/></td>
+    <td><img src="photos/register_screen.png" width="200"/></td>
   </tr>
 </table>
 
