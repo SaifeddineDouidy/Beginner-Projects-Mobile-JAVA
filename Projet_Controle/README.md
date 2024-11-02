@@ -52,29 +52,39 @@ Une application Android permettant aux utilisateurs de se connecter ou de créer
   </tr>
 </table>
 
-## 📦 Structure du Projet
+## 📦 Structure du Projet                    
+  
 ```
 app/
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   ├── view/
-│   │   │   │   ├── fragments/
-│   │   │   │   │   ├── LoginFragment
-│   │   │   │   │   └── SignUpFragment
-│   │   │   │   └── adapters/
-│   │   │   │       └── ViewPagerAdapter
-│   │   │   ├── viewmodel/
-│   │   │   │   └── UserViewModel
+│   │   │   ├── database/
+│   │   │   │   ├── UserDAO
+│   │   │   │   ├── UserDatabase
+│   │   │   │   └── UserEntity
 │   │   │   ├── model/
 │   │   │   │   └── User
-│   │   │   └── data/
-│   │   │       ├── UserDatabase
-│   │   │       ├── UserDao
-│   │   │       └── UserRepository
+│   │   │   ├── repository/
+│   │   │   │   └── UserRepository
+│   │   │   ├── utils/
+│   │   │   │   ├── DateConverter
+│   │   │   │   └── UserViewModelFactory
+│   │   │   ├── view/
+│   │   │   │   ├── adapters/
+│   │   │   │   │   └── ViewPagerAdapter
+│   │   │   │   └── fragments/
+│   │   │   │       ├── LoginFragment
+│   │   │   │       └── RegisterFragment
+│   │   │   ├── viewmodel/
+│   │   │   │   └── UserViewModel
+│   │   │   ├── MainActivity
+│   │   │   ├── SecondActivity
+│   │   │   └── SplashActivity
 │   │   └── res/
 │   │       └── layout/
-```
+```                                  
+  
 
 ## 💾 Configuration de Room Database
 L'application utilise Room Database pour :
