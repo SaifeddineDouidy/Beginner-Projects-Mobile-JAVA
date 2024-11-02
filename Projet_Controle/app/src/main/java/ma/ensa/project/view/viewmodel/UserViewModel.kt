@@ -1,5 +1,7 @@
 package ma.ensa.project.view.viewmodel
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,6 +19,7 @@ class UserViewModel(private val userRepository: UserRepository) : ViewModel() {
     private val _loginResult = MutableStateFlow<Result<UserEntity>?>(null)
     val loginResult: StateFlow<Result<UserEntity>?> get() = _loginResult
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun registerUser(email: String, username: String, password: String) {
         viewModelScope.launch {
             val result = userRepository.registerUser(email, username, password)

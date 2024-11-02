@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("HardwareIds")
     private String getDeviceIdentifier() {
         TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        String imei = "unknown";
+        String imei = "null";
 
         try {
             if (telephonyManager != null && ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {

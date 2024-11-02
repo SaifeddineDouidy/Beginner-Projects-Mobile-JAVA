@@ -9,7 +9,7 @@ import ma.ensa.project.utils.DateConverter
 
 @Database(entities = [UserEntity::class], version = 1, exportSchema = false
 )
-@TypeConverters(DateConverter::class)  // Ajoutez cette ligne
+@TypeConverters(DateConverter::class)
 
 abstract class UserDatabase : RoomDatabase() {
     abstract fun userDao(): UserDAO

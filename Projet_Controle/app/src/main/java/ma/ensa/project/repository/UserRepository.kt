@@ -1,5 +1,7 @@
 package ma.ensa.project.repository
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import ma.ensa.project.database.UserDAO
 import ma.ensa.project.database.UserEntity
 import kotlinx.coroutines.flow.Flow
@@ -19,6 +21,7 @@ class UserRepository(private val userDao: UserDAO) {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     suspend fun registerUser(email: String, username: String, password: String): Result<UserEntity> {
         return withContext(Dispatchers.IO) {
             try {

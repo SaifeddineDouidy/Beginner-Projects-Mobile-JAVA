@@ -13,7 +13,6 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
-        // Masquer la barre de statut
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             window.setDecorFitsSystemWindows(false)
         } else {
@@ -23,7 +22,6 @@ class SecondActivity : AppCompatActivity() {
         val title = findViewById<TextView>(R.id.welcomeTitle)
         val message = findViewById<TextView>(R.id.welcomeMessage)
 
-        // Configuration initiale
         title.apply {
             scaleX = 0f
             scaleY = 0f
@@ -40,7 +38,6 @@ class SecondActivity : AppCompatActivity() {
             rotation = 15f
         }
 
-        // Animation du titre
         title.animate()
             .alpha(1f)
             .translationY(0f)

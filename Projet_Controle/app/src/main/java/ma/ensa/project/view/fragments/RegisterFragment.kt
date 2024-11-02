@@ -54,7 +54,6 @@ class RegisterFragment : Fragment() {
                     result?.let {
                         when (it.isSuccess) {
                             true -> {
-                                // Clear EditTexts
                                 etFullname.text.clear()
                                 etEmail.text.clear()
                                 etPassword.text.clear()
